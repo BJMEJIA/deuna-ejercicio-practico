@@ -10,8 +10,9 @@ module "s3_bucket" {
 
   source            = "../../modules/s3"
   s3_bucket_name    = var.s3_bucket_name
-  tags              = var.tags
   kms_master_key_id = module.kms.kms_master_key_id
+
+  tags = var.tags
 
 }
 
@@ -33,5 +34,6 @@ module "aurora-postgresql" {
 #   source = "../../modules/secret_manager"
 #   db_master_password = var.db_master_password
 #   db_master_username = var.db_master_username
+#   tags = var.tags
 # }
 

@@ -1,3 +1,4 @@
+# RDS Aurora cluster
 resource "aws_rds_cluster" "postgresql" {
   cluster_identifier            = var.db_cluster_identifier
   engine                        = "aurora-postgresql"
@@ -9,6 +10,7 @@ resource "aws_rds_cluster" "postgresql" {
   tags = var.tags
 }
 
+# Instancias del cluster de RDS Aurora
 resource "aws_rds_cluster_instance" "cluster_instance" {
   count              = var.instances_count
   identifier         = "${var.db_cluster_identifier}-instance-${count.index + 1}"

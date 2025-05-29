@@ -1,5 +1,4 @@
 variable "kms_statements" {
-  description = "Lista de declaraciones KMS a inyectar"
   type = list(object({
     sid            = string       # Identificador único para cada statement
     effect         = string       # "Allow" o "Deny"

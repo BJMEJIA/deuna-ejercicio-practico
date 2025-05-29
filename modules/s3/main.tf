@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "s3_bucket" {
 
 }
 
-# Encriptacion de data en reposo
+# Encriptación de data en reposo
 resource "aws_s3_bucket_server_side_encryption_configuration" "s3_encryption" {
   bucket = aws_s3_bucket.s3_bucket.id
 
@@ -61,8 +61,8 @@ resource "aws_s3_bucket_versioning" "s3_versioning" {
 }
 
 resource "aws_s3_bucket_object_lock_configuration" "s3_object_lock" {
-  depends_on = [ aws_s3_bucket_versioning.s3_versioning ]
-  bucket = aws_s3_bucket.s3_bucket.id
+  depends_on = [aws_s3_bucket_versioning.s3_versioning]
+  bucket     = aws_s3_bucket.s3_bucket.id
 
   rule {
     default_retention {

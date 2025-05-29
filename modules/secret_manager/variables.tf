@@ -1,5 +1,5 @@
 variable "db_master_username" {
-  type    = string
+  type = string
 }
 
 variable "db_master_password" {
@@ -9,4 +9,8 @@ variable "db_master_password" {
 
 variable "kms_master_key_id" {
   type = string
+}
+
+variable "tags" {
+  type = map(string)
 }

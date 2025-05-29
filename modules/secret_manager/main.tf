@@ -9,7 +9,7 @@ resource "aws_secretsmanager_secret" "pgadmin" {
 }
 
 resource "aws_secretsmanager_secret_version" "pgadmin_version" {
-  secret_id     = aws_secretsmanager_secret.pgadmin.id
+  secret_id = aws_secretsmanager_secret.pgadmin.id
   secret_string = jsonencode({
     username = var.db_master_username
     password = var.db_master_password
