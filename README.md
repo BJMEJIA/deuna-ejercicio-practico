@@ -3,7 +3,7 @@
 Este repositorio contiene la infraestructura Terraform necesaria para desplegar los recursos base de la práctica de **deuna!** en AWS:
 
 - **KMS**: llave maestra para encriptado  
-- **S3**: bucket principal y bucket de logs, ambos cifrados y con bloqueo de acceso público  
+- **S3**: bucket principal, cifrados y con bloqueo de acceso público  
 - **RDS Aurora PostgreSQL**: cluster y réplicas  
 - **Secrets Manager**: almacenamiento seguro de credenciales de `pgadmin` (OPCIONAL)
 
@@ -37,8 +37,6 @@ Crea una CMK simétrica con key rotation y política base.
 Crea:
 
 - Bucket principal cifrado con la CMK.
-
-- Bucket de logs con ACL log-delivery-write.
 
 - Bloqueo de acceso público y política TLS-only.
 
