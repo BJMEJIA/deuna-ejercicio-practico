@@ -6,6 +6,7 @@ resource "aws_rds_cluster" "postgresql" {
   master_user_secret_kms_key_id = var.kms_master_key_id
   master_username               = var.db_master_username
   manage_master_user_password   = true
+  skip_final_snapshot           = true
 
   tags = var.tags
 }
